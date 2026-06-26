@@ -62,6 +62,4 @@ jobs:
 
         git commit -m "update song" || exit 0
 
-        git pull origin main --rebase
-
-        git push origin main
+        git push origin main --force
