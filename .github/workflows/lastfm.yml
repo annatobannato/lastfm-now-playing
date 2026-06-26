@@ -16,6 +16,7 @@ jobs:
 
     - uses: actions/checkout@v4
 
+
     - name: Update song
       run: |
 
@@ -49,6 +50,7 @@ jobs:
         LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
 
 
+
     - name: Save changes
       run: |
 
@@ -60,6 +62,8 @@ jobs:
 
         git commit -m "update song" || exit 0
 
-        git pull --rebase
+        git fetch origin main
 
-        git push
+        git rebase origin/main
+
+        git push origin main
