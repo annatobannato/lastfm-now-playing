@@ -60,4 +60,6 @@ jobs:
 
         git commit -m "update song" || exit 0
 
+        git pull --rebase
+
         git push
