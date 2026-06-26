@@ -45,6 +45,9 @@ jobs:
 
         EOF
 
+      env:
+        LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+
 
     - name: Save changes
       run: |
@@ -58,6 +61,3 @@ jobs:
         git commit -m "update song" || exit 0
 
         git push
-
-      env:
-        LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
